@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_BASE_SCHEME</key>
+	<string>$(API_BASE_SCHEME)</string>
+	<key>API_BASE_URL</key>
+	<string>$(API_BASE_URL)</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>nl.starboardsocial.app</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>nl.starboardsocial.app</string>
+			</array>
+		</dict>
+		<dict/>
+	</array>
+	<key>OAUTH_CLIENT_ID</key>
+	<string>$(OAUTH_CLIENT_ID)</string>
+	<key>OAUTH_TENANT_ID</key>
+	<string>$(OAUTH_TENANT_ID)</string>
+</dict>
+</plist>

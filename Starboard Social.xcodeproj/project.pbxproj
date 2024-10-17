@@ -6,6 +6,25 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		9E6F76BB2CBADC7800D409D0 /* JWTDecode in Frameworks */ = {isa = PBXBuildFile; productRef = 9E6F76BA2CBADC7800D409D0 /* JWTDecode */; };
+		9E8EBCA82CB82C7F0072FE5F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 9E8EBCA72CB82C7F0072FE5F /* Alamofire */; };
+		9EC47F9B2CB83B910006CD78 /* OAuthSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9EC47F9A2CB83B910006CD78 /* OAuthSwift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9E8EBCB32CB82D0F0072FE5F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		9EA52E702CA5597B00838992 /* Starboard Social.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Starboard Social.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +42,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EC47F9B2CB83B910006CD78 /* OAuthSwift in Frameworks */,
+				9E8EBCA82CB82C7F0072FE5F /* Alamofire in Frameworks */,
+				9E6F76BB2CBADC7800D409D0 /* JWTDecode in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +77,7 @@
 				9EA52E6C2CA5597B00838992 /* Sources */,
 				9EA52E6D2CA5597B00838992 /* Frameworks */,
 				9EA52E6E2CA5597B00838992 /* Resources */,
+				9E8EBCB32CB82D0F0072FE5F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -65,6 +88,9 @@
 			);
 			name = "Starboard Social";
 			packageProductDependencies = (
+				9E8EBCA72CB82C7F0072FE5F /* Alamofire */,
+				9EC47F9A2CB83B910006CD78 /* OAuthSwift */,
+				9E6F76BA2CBADC7800D409D0 /* JWTDecode */,
 			);
 			productName = "Starboard Social";
 			productReference = 9EA52E702CA5597B00838992 /* Starboard Social.app */;
@@ -94,6 +120,11 @@
 			);
 			mainGroup = 9EA52E672CA5597A00838992;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				9E8EBCA62CB82C7F0072FE5F /* XCRemoteSwiftPackageReference "Alamofire" */,
+				9EC47F992CB83B910006CD78 /* XCRemoteSwiftPackageReference "OAuthSwift" */,
+				9E6F76B92CBADC7800D409D0 /* XCRemoteSwiftPackageReference "JWTDecode" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 9EA52E712CA5597B00838992 /* Products */;
 			projectDirPath = "";
@@ -127,6 +158,8 @@
 /* Begin XCBuildConfiguration section */
 		9EA52E7C2CA5597C00838992 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 9EA52E722CA5597B00838992 /* Starboard Social */;
+			baseConfigurationReferenceRelativePath = Secrets.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -190,6 +223,8 @@
 		};
 		9EA52E7D2CA5597C00838992 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 9EA52E722CA5597B00838992 /* Starboard Social */;
+			baseConfigurationReferenceRelativePath = Secrets.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -246,20 +281,25 @@
 		};
 		9EA52E7F2CA5597C00838992 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 9EA52E722CA5597B00838992 /* Starboard Social */;
+			baseConfigurationReferenceRelativePath = Secrets.xcconfig;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Starboard Social/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = CE6JM5XH47;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Starboard-Social-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Starboard Social";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -281,20 +321,25 @@
 		};
 		9EA52E802CA5597C00838992 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 9EA52E722CA5597B00838992 /* Starboard Social */;
+			baseConfigurationReferenceRelativePath = Secrets.xcconfig;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Starboard Social/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = CE6JM5XH47;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Starboard-Social-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Starboard Social";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -336,6 +381,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9E6F76B92CBADC7800D409D0 /* XCRemoteSwiftPackageReference "JWTDecode" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/auth0/JWTDecode.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.2.0;
+			};
+		};
+		9E8EBCA62CB82C7F0072FE5F /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+		9EC47F992CB83B910006CD78 /* XCRemoteSwiftPackageReference "OAuthSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/OAuthSwift/OAuthSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9E6F76BA2CBADC7800D409D0 /* JWTDecode */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9E6F76B92CBADC7800D409D0 /* XCRemoteSwiftPackageReference "JWTDecode" */;
+			productName = JWTDecode;
+		};
+		9E8EBCA72CB82C7F0072FE5F /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9E8EBCA62CB82C7F0072FE5F /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		9EC47F9A2CB83B910006CD78 /* OAuthSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9EC47F992CB83B910006CD78 /* XCRemoteSwiftPackageReference "OAuthSwift" */;
+			productName = OAuthSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9EA52E682CA5597A00838992 /* Project object */;
 }
