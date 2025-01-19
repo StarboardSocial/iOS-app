@@ -16,8 +16,14 @@ class Api {
     private let baseUrl: String = try! Configuration.value(for: "API_BASE_URL")
     
     private let decoder: JSONDecoder = {
+        let formatter = ISO8601DateFormatter()
+        formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+        
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .useDefaultKeys
+        decoder.dateDecodingStrategy = .custom({ decoder in
+            formatter.date(from: try! decoder.singleValueContainer().decode(String.self))!
+        })
         return decoder
     }()
     

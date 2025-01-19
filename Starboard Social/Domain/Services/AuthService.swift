@@ -24,7 +24,8 @@ class AuthService {
             // Perform the authentication and await the result.
             let urlWithToken = try await webAuthenticationSession.authenticate(
                 using: URL(string: "\(oauthBaseUrl)/oauth2/authorize?client_id=\(clientId)&tenantId=\(tenantId)&response_type=code&scope=offline_access&redirect_uri=\(callbackDomain):/callback")!,
-                callbackURLScheme: callbackDomain
+                callbackURLScheme: callbackDomain,
+                preferredBrowserSession: .ephemeral
             )
             try await exchangeCodeForToken(url: urlWithToken)
             return true
@@ -89,5 +90,17 @@ class AuthService {
             return refreshedToken
         }
         return token
+    }
+    
+    public func revokeToken() async throws {
+        try? await AuthRepository.shared.revokeToken()
+        
+        UserDefaults().removeObject(forKey: "accessToken")
+        UserDefaults().removeObject(forKey: "refreshToken")
+        UserDefaults().removeObject(forKey: "expiresAt")
+        UserDefaults().removeObject(forKey: "userId")
+        
+        UserDefaults().synchronize()
+        NotificationCenter.default.post(name: NSNotification.Name("auth_state_changed"), object: nil)
     }
 }

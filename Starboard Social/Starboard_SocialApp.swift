@@ -11,6 +11,9 @@ import SwiftUI
 struct Starboard_SocialApp: App {
     @State var loginState: LoginState = .loading
     
+    private let authStatePub = NotificationCenter.default
+                .publisher(for: NSNotification.Name("auth_state_changed"))
+    
     private func checkLoginState() async {
         if (await AuthService.shared.getToken(forceRefresh: true) == nil) {
             loginState = .loggedOut
@@ -40,7 +43,7 @@ struct Starboard_SocialApp: App {
                     }
                 case .loggedIn:
                     TabView {
-                        ContentView()
+                        FeedScreen()
                             .tabItem {
                                 Label("Home", systemImage: "house")
                             }
@@ -48,13 +51,22 @@ struct Starboard_SocialApp: App {
                             .tabItem {
                                 Label("Recommendations", systemImage: "star")
                             }
-                        ContentView()
+                        CreatePostScreen()
+                            .tabItem {
+                                Label("Create Post", systemImage: "pencil")
+                            }
+                        ProfileScreen()
                             .tabItem {
                                 Label("Profile", systemImage: "person")
                             }
                     }
                 }
             }.onAppear {
+                Task {
+                    await checkLoginState()
+                }
+            }
+            .onReceive(authStatePub) {(_) in
                 Task {
                     await checkLoginState()
                 }

@@ -31,7 +31,7 @@ struct LoginScreen: View {
                     loginState = .loading
                     let success: Bool = await authService.instantiateOAuthFlow(webAuthenticationSession: webAuthenticationSession)
                     if (success) {
-                        loginState = .loggedIn
+                        NotificationCenter.default.post(name: NSNotification.Name("auth_state_changed"), object: nil)
                     } else {
                         loginState = .loggedOut
                     }

@@ -23,4 +23,10 @@ class AuthRepository {
         let result = await Api.shared.request(request, type: Token.self, skipAuth: true)
         return try result.get()
     }
+    
+    public func revokeToken() async throws {
+        let request = AuthRequest.revokeToken
+        _ = await Api.shared.request(request, skipAuth: false)
+        return
+    }
 }

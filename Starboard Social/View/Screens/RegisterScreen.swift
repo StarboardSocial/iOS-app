@@ -33,13 +33,22 @@ struct RegisterScreen: View {
     }
     
     var body: some View {
-        VStack {
-            Spacer()
-            TextField(text: $firstName, label: { Text("First Name") })
-            TextField(text: $lastName, label: { Text("Last Name") })
-            TextField(text: $sailboatType, label: { Text("Sailboat Type") })
-            Button(action: register, label: { Text("Register") })
-            Spacer()
+        NavigationView {
+            VStack {
+                Spacer()
+                TextField(text: $firstName, label: { Text("First Name") })
+                    .textFieldStyle(.roundedBorder)
+                TextField(text: $lastName, label: { Text("Last Name") })
+                    .textFieldStyle(.roundedBorder)
+                TextField(text: $sailboatType, label: { Text("Sailboat Type") })
+                    .textFieldStyle(.roundedBorder)
+                Button(action: register, label: { Text("Register").padding(.horizontal, 100) })
+                    .buttonStyle(.borderedProminent)
+                    .buttonBorderShape(.capsule)
+                Spacer()
+            }
+            .padding(20)
+            .navigationTitle(Text("Register"))
         }
     }
 }

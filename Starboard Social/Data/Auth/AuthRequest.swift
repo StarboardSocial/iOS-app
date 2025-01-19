@@ -11,16 +11,21 @@ import Alamofire
 enum AuthRequest: URLRequestConvertible {
     case exchangeCode(code: String)
     case refreshToken(accessToken: String, refreshToken: String)
+    case revokeToken
     
     var path: String {
         switch self {
             case .exchangeCode(let code): return "/auth/token/exchange?code=\(code)&redirectUri=nl.starboardsocial.app:/callback"
             case .refreshToken: return "/auth/token/refresh"
+            case .revokeToken: return "/auth/token/revoke"
         }
     }
     
     var method: HTTPMethod {
-        return .post
+        switch self {
+            case .revokeToken: return .delete
+            default: return .post
+        }
     }
     
     var headers: HTTPHeaders {
@@ -40,6 +45,4 @@ enum AuthRequest: URLRequestConvertible {
         request.headers = headers
         return request
     }
-    
-    
 }

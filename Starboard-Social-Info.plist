@@ -20,6 +20,8 @@
 		</dict>
 		<dict/>
 	</array>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>OAUTH_CLIENT_ID</key>
 	<string>$(OAUTH_CLIENT_ID)</string>
 	<key>OAUTH_TENANT_ID</key>
